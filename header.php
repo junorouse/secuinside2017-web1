@@ -45,6 +45,15 @@
     <a class="nav-item" href="mypage.php">
       Mypage
     </a>
+    <?php
+    if ($_COOKIE['user_id'] == 'admin' && $_COOKIE['token'] == 'ed83a1aa51fae85f7d8ebe7a040cf8c54d30db17') { 
+        ?>
+    <a class="nav-item" href="admin/">
+        Admin
+    </a>
+    <?php
+    }
+    ?>
   </div>
 </nav>
 

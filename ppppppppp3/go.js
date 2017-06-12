@@ -1,7 +1,12 @@
 var page = require('webpage').create();
+
+var system = require('system');
+var args = system.args;
+
 var host = "127.0.0.1";
 // host = 'localhost';
-var url = "http://"+host+"/admin/read.php?idx_token=35a423a8ac88191dbc5f5875858992aaf6269985";
+var url = "http://"+host+"/admin/read.php?idx_token="+args[1];
+console.log(url);
 var timeout = 20000;
 
 phantom.addCookie({

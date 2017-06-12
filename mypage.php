@@ -6,6 +6,9 @@ include("header.php");
 ?>
 
 <?php
+    if ($_COOKIE['user_id'] == 'admin') {
+        exit("admin can't see message list");
+    }
     $stmt = $pdo->prepare("select * from supports where user_id=?");
     $stmt->execute(array($_COOKIE['user_id']));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);

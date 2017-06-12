@@ -19,7 +19,7 @@ if (check_servername() && check_ip()) {
     */
     if ((check_servername() && check_ip()) || 0 ) {
         $query = "select * from supports where idx_token='{$_GET['idx_token']}'";
-        echo $query;
+//        echo $query;
         $m = mysqli_query($mysqli, $query);
         $rows = mysqli_fetch_array($m);
     } else {

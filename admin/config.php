@@ -1,5 +1,5 @@
 <?php
-$mysqli = mysqli_connect("localhost", "secuweb", "elqlqlqjs1234", "secuweb");
+$mysqli = mysqli_connect("127.0.0.1", "secuweb", "elqlqlqjs1234", "secuweb");
 $pdo = new PDO(
     'mysql:host=127.0.0.1;dbname=secuweb',
     'secuweb',
@@ -8,10 +8,12 @@ $pdo = new PDO(
 
 
 function check_ip() {
+ //   var_dump($_SERVER['REMOTE_ADDR']);
     return $_SERVER['REMOTE_ADDR'] == '127.0.0.1' || $_SERVER['REMOTE_ADDR'] == '::1';
 }
 
 function check_servername() {
+//    var_dump($_SERVER['HTTP_HOST']);
     return $_SERVER['HTTP_HOST'] == 'localhost';
 }
 
